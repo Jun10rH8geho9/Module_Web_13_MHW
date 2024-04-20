@@ -10,10 +10,10 @@ class Settings(BaseSettings):
     MAIL_FROM: str
     MAIL_PORT: int
     MAIL_SERVER: str
+    MAIL_FROM_NAME: str
     POSTGRES_DB: str
     POSTGRES_USER: str
     POSTGRES_PASSWORD: int
-    SECRET_KEY: int
     POSTGRES_PORT: int =5432  
     REDIS_DOMAIN: str = 'localhost'
     REDIS_PORT: int = 6379

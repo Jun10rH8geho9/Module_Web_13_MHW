@@ -5,9 +5,9 @@ from middlewares import CustomHeaderMiddleware
 from fastapi_limiter import FastAPILimiter
 from src.conf.config import settings
 from src.routes import contacts, auth, users
-# from middlewares import (BlackListMiddleware, CustomCORSMiddleware,
-#                          CustomHeaderMiddleware, UserAgentBanMiddleware,
-#                          WhiteListMiddleware)
+from middlewares import (BlackListMiddleware, CustomCORSMiddleware,
+                         CustomHeaderMiddleware, UserAgentBanMiddleware,
+                         WhiteListMiddleware)
 
 import uvicorn
 
@@ -17,6 +17,12 @@ app.include_router(auth.router, prefix='/api')
 app.include_router(users.router, prefix='/api')
 app.include_router(contacts.router, prefix='/api')
 app.add_middleware(CustomHeaderMiddleware)
+# app.add_middleware(BlackListMiddleware)
+# app.add_middleware(CustomCORSMiddleware)
+# app.add_middleware(UserAgentBanMiddleware)
+# app.add_middleware(WhiteListMiddleware)
+
+
 
 app.mount("/static", StaticFiles(directory='src/static'), name="static")
 

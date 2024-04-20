@@ -20,5 +20,5 @@ poetry export -f requirements.txt --output requirements.txt
 
 docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 docker run --name redis-name -d -p 6379:6379 redis
-docker-compose up
+docker-compose up -d
 docker-compose down
